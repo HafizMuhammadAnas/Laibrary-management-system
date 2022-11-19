@@ -1,0 +1,28 @@
+  <% if @book.errors.any? %>
+      <%  @book.errors.full_messages.each do |message| %>
+       <p>  <%= message %></p>
+      <%end %>
+    <%end %>
+     <div>
+     <%= form.label :book_title %><br>
+     <%= form.text_field :book_title%>
+     </div>
+     <div>
+     <%= form.label :description%><br>
+     <%= form.text_field :description%>
+     </div>
+
+ <div>
+     <%= form.label :content %><br>
+     <%= form.rich_text_area :content %>
+     </div>
+     <div>
+     <%= form.label :publish_date %><br>
+     <%= form.date_field :publish_date%>
+     </div>
+     <div>
+     <%= form.label :profile_image%><br>
+     <%= form.file_field :profile_image%>
+     </div>
+     <%= form.hidden_field :user_id , value: current_user.id %>
+     <%= form.submit %>

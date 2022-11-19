@@ -1,0 +1,19 @@
+<div class= "text-white bg-info mb-3" >
+     <style>
+       h1 {text-align: center;}
+     </style>
+<h1>show Student Record</h1>
+<% if @user.profile_image.attached? %>
+<%= image_tag @user.profile_image %>
+<%end%>
+
+<div><p><strong>ID</strong><br><%= @user.first_name%></p></div>
+<div><p><strong>Email</strong><br><%= @user.last_name%></p></div>
+<div><p><strong>Password</strong><br><%= @user.username%></p></div>
+<div><p><strong>Password</strong><br><%= @user.email%></p></div>
+<div><p><strong>Password</strong><br><%= @user.role%></p></div>
+<div><p><strong>Password</strong><br><%= @user.profile_image%></p></div>
+
+
+<%= link_to 'Back', users_path , class: 'btn btn-primary' %>
+</div>

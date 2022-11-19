@@ -1,0 +1,52 @@
+<div class= "text-white bg-info mb-3" >
+
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+<div><img
+              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHgApwMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAACAwABBgQFB//EAEIQAAEDAgMEBgYHBQkBAAAAAAEAAgMEEQUSIRMxQVEGVGFxk9EUFSKBkfAyQkNilLHBNVKh0uEjJCVEVXN0orIH/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECBAMF/8QAIBEBAQEBAAIBBQEAAAAAAAAAAAECESExAxIiMkFhE//aAAwDAQACEQMRAD8A8SMWT2pTQnNC5rGNCc0JbAntCAmpzQhaExoQWAjAUaEYCCBEArAWc6W9JBgwZTQhpqZW5szvs26i9uJ0KDR7t+iKy+SS1tViT9q6WSaW3stLibe4LswLpLW4LV7GubI6meRnZJcFg/ebf8kWs4+oKWVss5ocNQdx5orFFQqI7KWQAQqsm2VWQLspZMsplQc72XUTy1RBlGhOYEtoT2BAxgT2hLYF0MCAmhNaELQmgKBYCIBQBGAggCzU2H0tZ08jZiUW1i9DDog76Is43+e0LTgLmraOOeannfe8RINja7HaOH5H3KuvS/x/lGgo58FgoJZqcUn9iDtNg1pIt3LD9NKKPpLhUlTFSvilpxeMvbY67wdOXIr32SYbhDiIIpnvkaQ50bc7ieFzyvbVPxPEdvhk0b4TGQ0B12/WOtr8dOS49vet9zOeXPRMLKSFjhZzY2gi9+CfZQEHUWsdUVlojzr4qrK7KwFdkQG3YplR5VdkC8qlkyymVEl5VEeVRBkGBPYlMCewKUHMCewJTAnMCgMaE4BA1MCJWEQCoI2oLAV/Nk2lp5aqXZwML3dnAc1psLwGKANkqrSy7wPqt81aZtVt4wxqIMNrmMrwGDLmjqMtnMaT9Fx320Sa3E48Yq4qLCXB9Oy+0nA9nXfbt3rV9KOj7ayqFTC3M8xhsjAdbDc63vI+C8jDsMFIxzSzI0aAgX/JcN4s19Lb8e5rHbXpYdgtRU4eyWIjNdwDXaZgDpY9y56ilnpjaeJ7L7iRothhMsRpY42MfCWNAEcrcrtOPb7l2vja8FrwHNO9rhcLV/n4YbvttfPlYWmxLAqcxukphsnD6v1T5LNuaWPLXCzmmxCpc2Jl6oK7KBWFVZLKWRWUKALKIlEGOYuhgSWJ7FKDmJ7EliexQk5qMIGowgKyLcEKtBtsFjghomCNoBIBceJPavQD9TzKz1PVGkgjkN7Dfbl2+5e5DM59iGgNO7tWrnI4d6o0UT5ts4OE502gdZ1uVxw7E6OlibIZT7TzoHO3qcURcA3U213oDNuV7bkJksqv2pU8zY2Oe91msFyeQQIqqkPDmj6INh7tFmMTYWVjr/W1TMFxJ+KUhqHWDXuJYANwzE/kAujHIrESDgo+TP2mL5eUEQQBECszuNRRUgiiiiDIMT2JLE9iIOYnMSmBPYESY1GEIRhBYVgXOUak6BUnUjXPq4WstmLwBcXSeyvenLRTujcL6AW5rzejGLyU7Joqp5NOJi2FzzuHIdi6sRZUCAgxvY4ttmuC0/PJcfRp7do+nfkyvaMu1HEfrvW23kkZZO21rTWR5Q/OLHcRxRNkzMfxF1y01GyMkhzXS8DazW9wXW3JAzILnmVHhZbZN9+S8euqqioD4xTuETvpOOgsvSmJIvdtuYXmVxkdEYmOJDgS7uQeVgN/SHxsAEds2psG/wBF7eIxiop3tZqbeyRzWZw1hlq4m5pAeAjy3/7aLVupslKc8tQdPaDyG377foq5vc+U2c0y40NjpbmiCC4ubAAcAOARhZXcaipRBaiiiDJMT2JLE9iIPYnNSWpzCgYEYQBECgJFG4NkY47muBPxS7qwRfXdxQbrLniD7tdyJbvWeoo6ebEq4yFphBHtk6X7CvY30QERkyZNLEE296ybOleD4XiMtFidT6PUOO1jldFmAaSQB7O62UrXf04T+NFFWRUzyyKWWovyYdPeuyJz5o3PaD2gggrzqTHaatbmoMXwqob92QX+F08YnWMeGNdQyucOE2XKO3Uq3Yjlns2oe5jbXu47mjS6A00kMTpqiR73HRkQ0BJ4dyXU4oKCI1OIVmFUkY0Mj3X/AFWQ6R//AEijpIj6skFdOPt3RZYoxxIvqTyVdak91aY1r1Hs4GweuWMcPol38FqMTLm0cgjGuW3cs90YaZa572m5yg5rX3m69LpBWCGnMFxnkvoOXE/ouefGerX8uM6w6JgKUCjaVndTbq0IVqRaipRBlWlNadUMdHWuaCKKqIOoIgfr/BPbQ1vUqrwH+SIW0prXIW0db1Oq8B3kmNo6zqdT4DvJAYOivMp6JWdUqfBd5K/RKzqdT4LvJBWZTOr9ErOqVPgu8lDSVnVKnwXeSD2sKxuno6CQ18wjigFy48Wr4Zj+JHGMWqa8syNmeTHH+43gF9MxXCKuvw+em9EqQZGENdsXaG2nBfMPUeNgEOwfE7jQ/wBzk8lo+PfZyuep57HDmDT7Wo7RddHpbDGGiFmawBu0ZTbdonDBMZGhwXErf8OTyVeoMXuP8GxP8HJ/Ko1jGva2fk3n059vmBtHEC7i1tiqcc5u6xK7PUeL/wCj4l+Dk/lU9SYwB+x8S/ByeStnOM+Ya+TevdfSegPTMUuDvbPT7eWns2TK+zy3c0i+h5d60WKVzK6r28Yc1uQDK8WI+br5f0RwHGJMWO3w2vhp2xkyZ6Z7c2osNQvoopKvqlR4LvJcd29s/S0+nk8eRByMOQilq+qVHhO8kbaar6pUeE7yVEia5GHIRS1XVZ/Cd5IxS1XVZ/Cd5IKuoqdT1Q/ys/hO8lE4PpOFfsyk/wBhn/kLqt2qKLqolu0qW7VFEFqverUQebiD8SbUMFDEx0YbmJcbXOvs7+5coqMeJD/RYQD9m4jTUcc3K5+CiiA3z40CC2nhNgLgcbgfe4a9+iuKfGLzOmpoxeIFjWuBs+5zDfqLWsdL/dUUQFFUYw6cCSlhbDmAJvra+p38Edc/FA5oo443HZEuLiA0PuLWO/dfhZUog4gekXsk7O2mYWbff8P6cLo5Tj0boxCI5GZgSXltyLnR1gOwXA4X1VqIOvDH4kZZG4hGwNDRlcwixN/nusOZXoqKIIorUQRRRRBStRRB/9k="
+              class="rounded-circle"
+              height="60"
+              alt="Avatar"
+              loading="lazy"
+            /></div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back, class: "btn btn-outline-primary" %>
+</div>
