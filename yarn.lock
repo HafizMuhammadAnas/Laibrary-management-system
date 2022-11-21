@@ -180,7 +180,3 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
-trix@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/trix/-/trix-2.0.0.tgz#eaac6a8e3a3192f41675232c8dbf1ede2c8771cc"
-  integrity sha512-3ELqNcPi1bZDuyStX0c3PpxUgynL9Q4MJqywpGAl+EWqd0mbgdQprEJta/j4o21nUXekC2L+5XP7pISjLJEXcA==
