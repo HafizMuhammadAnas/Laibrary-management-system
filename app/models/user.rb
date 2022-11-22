@@ -16,7 +16,6 @@ class User < ApplicationRecord
          :recoverable,
          :rememberable,
          :validatable,
-         :confirmable,
          :trackable,
          authentication_keys: [:login]
   validates :username, presence: true, uniqueness: true
@@ -30,10 +29,10 @@ class User < ApplicationRecord
 
   private
 
-  def after_confirmation
-    WelcomeMailer.send_greetings_notification(self)
-                 .deliver_now
-  end
+  # def after_confirmation
+  #   WelcomeMailer.send_greetings_notification(self)
+  #                .deliver_now
+  # end
 
   def self.find_for_authentication(warden_condition)
     conditions = warden_condition.dup
