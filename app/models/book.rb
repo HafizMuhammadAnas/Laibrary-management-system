@@ -7,4 +7,6 @@ class Book < ApplicationRecord
   has_many :borrow_histories
 
   validates :book_title, :description, :publish_date, presence: true
+  validates :book_title, length: { maximum: 25 }
+  validates :description, length: { maximum: 100 }
 end

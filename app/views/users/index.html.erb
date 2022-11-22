@@ -40,10 +40,10 @@
    <td> <%= user.role %> </td>
    <td> <%= user.education %> </td>
      <% if can? :read, User %>
-       <td><%= link_to "", user_path(user) ,class: "btn btn-info bi bi-eye-fill"%></td>
+       <td><%= link_to "View", user_path(user) ,class: "btn btn-info bi bi-eye-fill"%></td>
      <% end %>
      <% if can? :destroy, User %>
-     <td> <%= link_to "", user_path(user.id),class: "btn btn-danger bi bi-trash" , data: { 'turbo-confirm': 'Are you sure?', 'turbo-method': :delete } %></td>
+     <td> <%= link_to "Delete", user_path(user.id),class: "btn btn-danger bi bi-trash" , data: { 'turbo-confirm': 'Are you sure?', 'turbo-method': :delete } %></td>
      <% end %>
   </tr>
 <% end %>

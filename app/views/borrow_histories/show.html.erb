@@ -8,10 +8,10 @@ h1 {text-align: center;}
 </style>
 <h1>Borrowed Book Detail </h1>
 
-
-<div><p><strong>Issue_Date</strong><br><%= @borrow_history.starts_at_time_of_day%></p></div>
-<div><p><strong> Book_Title </strong><br><%= @borrow_history.book_title %></p></div>
 <div><p><strong>User_Id</strong><br><%= @borrow_history.user_id%></p></div>
+<div><p><strong>Issue_Date</strong><br><%= @borrow_history.starts_at_time_of_day.strftime('%m-%d-%y')%></p></div>
+<div><p><strong>Due_date</strong><br><%= @borrow_history.due_date.strftime('%m-%d-%y')%></p></div>
+<div><p><strong> Book_Title </strong><br><%= @borrow_history.book_title %></p></div>
 <div><p><strong>Book_Id</strong><br><%= @borrow_history.book_id%></p></div>
 <div><p><strong>Publish_Date</strong><br><%= @borrow_history.publish_date%></p></div>
 <div><p><strong>Total_Fine</strong><br><%= @borrow_history.fine%></p></div>

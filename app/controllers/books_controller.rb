@@ -12,7 +12,7 @@ class BooksController < ApplicationController
 
   def update
     if @books.update(book_params)
-      redirect_to books_path, notice: 'Bugg has been updated successfuly'
+      redirect_to books_path, notice: 'Book has been updated successfuly'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -25,7 +25,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save!
-      redirect_to books_path, notice: 'Bugg has been created successfuly'
+      redirect_to books_path, notice: 'Book has been created successfuly'
     else
       render :new, status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    redirect_to book_path, alert: 'Bugg has been deleted successfuly'
+    redirect_to book_path, alert: 'Book has been deleted successfuly'
   end
 
   def sum; end

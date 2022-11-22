@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts '====='
-User.create(email: 'admin@gmail.com', password: '123456', role: 'admin' ,username: 'owner' )
+User.create(email: 'newadmin@gmail.com', password: '123456', role: 'admin' ,username: 'owner' )
 puts '====='
-User.create(email: 'manager@gmail.com', password: '123456',role: 'manager' ,username: 'manager' )
+User.create(email: 'manager2@gmail.com', password: '123456',role: 'manager' ,username: 'Librarian', first_name: "syed", last_name:"usama" )

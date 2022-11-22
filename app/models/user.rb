@@ -20,13 +20,15 @@ class User < ApplicationRecord
          authentication_keys: [:login]
   validates :username, presence: true, uniqueness: true
 
+
   #  enum role: %i[admin manager student]
   attr_accessor :login
 
   def login
     @login || username || email
   end
-
+  scope :std_list, -> { where(role: 'student') }
+  scope :lib_list, -> { where(role: 'manager') }
   private
 
   # def after_confirmation

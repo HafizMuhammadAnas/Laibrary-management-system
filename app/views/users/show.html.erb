@@ -7,12 +7,12 @@
 <%= image_tag @user.profile_image %>
 <%end%>
 
-<div><p><strong>ID</strong><br><%= @user.first_name%></p></div>
-<div><p><strong>Email</strong><br><%= @user.last_name%></p></div>
-<div><p><strong>Password</strong><br><%= @user.username%></p></div>
-<div><p><strong>Password</strong><br><%= @user.email%></p></div>
-<div><p><strong>Password</strong><br><%= @user.role%></p></div>
-<div><p><strong>Password</strong><br><%= @user.profile_image%></p></div>
+<div><p><strong>First_name</strong><br><%= @user.first_name%></p></div>
+<div><p><strong>Last_name</strong><br><%= @user.last_name%></p></div>
+<div><p><strong>Username</strong><br><%= @user.username%></p></div>
+<div><p><strong>Email</strong><br><%= @user.email%></p></div>
+<div><p><strong>Role</strong><br><%= @user.role%></p></div>
+<div><p><strong>Profile_image</strong><br><%= @user.profile_image%></p></div>
 
 
 <%= link_to 'Back', users_path , class: 'btn btn-primary' %>
