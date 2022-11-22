@@ -76,6 +76,6 @@ gem 'cssbundling-rails', '~> 1.1', '>= 1.1.1'
 gem 'devise'
 gem 'rack-mini-profiler'
 gem 'cancancan'
-gem 'jsbundling-rails'
+# gem 'jsbundling-rails'
 gem 'pry-rails'
 gem 'rails-erd', group: :development
