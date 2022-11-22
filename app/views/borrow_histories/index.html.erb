@@ -42,6 +42,7 @@ h1 {text-align: center;}
     <td> <%= borrow_history&.due_date&.strftime('%m-%d-%y')%> </td>
     <td> <%= borrow_history.fine %> </td>
      <% if can? :read, BorrowHistory %>
+
           <td><%= link_to "View", borrow_history ,class: "bi bi-eye-fill btn btn-info"%></td>
      <%end%>
      <%if can? :destroy, BorrowHistory%>
@@ -50,9 +51,16 @@ h1 {text-align: center;}
      <%end %>
    </tr>
  <% end %>
+
 </div>
 
 </tbody>
+
 </table>
+<%if current_user.role == 'manager' || current_user.role == 'admin'%>
+<%= link_to 'Back To Student Table', users_path() , class: 'btn btn-primary' %>
+<%else%>
+<%= link_to 'Back To Books Table', books_path , class: 'btn btn-primary' %>
+<%end%>
 
 </div>

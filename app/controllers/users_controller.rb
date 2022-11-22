@@ -5,14 +5,14 @@ class UsersController < ApplicationController
   load_and_authorize_resource
   before_action :set_user, only: %i[show destroy]
 
-  # def index
-  #   @user = User.all
-  # end
+  def index
+    @user = User.all
+  end
 
-def index
-  @user = User.std_list  if params[:show] == 'student_list'
-  @user = User.lib_list if params[:show] == 'librarian_list'
-end
+# def index
+#   @user = User.std_list  if params[:show] == 'student_list'
+#   @user = User.lib_list if params[:show] == 'librarian_list'
+# end
 
   def show; end
 

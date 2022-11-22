@@ -27,8 +27,8 @@ class User < ApplicationRecord
   def login
     @login || username || email
   end
-  scope :std_list, -> { where(role: 'student') }
-  scope :lib_list, -> { where(role: 'manager') }
+  # scope :std_list, -> { where(role: 'student') }
+  # scope :lib_list, -> { where(role: 'manager') }
   private
 
   # def after_confirmation

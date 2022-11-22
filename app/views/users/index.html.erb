@@ -44,7 +44,10 @@
      <% end %>
      <% if can? :destroy, User %>
      <td> <%= link_to "Delete", user_path(user.id),class: "btn btn-danger bi bi-trash" , data: { 'turbo-confirm': 'Are you sure?', 'turbo-method': :delete } %></td>
-     <% end %>
+     <td><%= link_to "View_Borrow_Books",  borrow_histories_path(user) ,class: "btn btn-success bi bi-eye-fill"%></td>
+
+    <% end %>
+
   </tr>
 <% end %>
 </div>

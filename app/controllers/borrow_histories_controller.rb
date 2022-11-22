@@ -5,7 +5,12 @@ class BorrowHistoriesController < ApplicationController
 
   # GET /borrow_histories or /borrow_histories.json
   def index
-    @borrow_histories = current_user.borrow_histories
+    user  = User.find_by(id: params[:format])
+    if params[:format].present?
+      @borrow_histories = user.borrow_histories
+    else
+      @borrow_histories = current_user.borrow_histories
+    end
   end
 
   # GET /borrow_histories/1 or /borrow_histories/1.json
