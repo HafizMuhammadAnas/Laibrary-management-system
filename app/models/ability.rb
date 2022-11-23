@@ -32,7 +32,7 @@ class Ability
       # return unless user.present?
       # debugger
       can :manage,  :all if user.role == 'admin' || user.role == 'manager'
-      can [:read, :create ],  Book   if user.role == 'student'
+      can [:read ],  Book   if user.role == 'student'
 
       can :read,  User   if user.role == 'student'
       can [:read, :destroy], BorrowHistory   if user.role == 'student'

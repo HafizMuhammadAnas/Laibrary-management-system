@@ -63,8 +63,9 @@ h1 {text-align: center;}
 <% end %>
 
 
-
-<%= link_to 'Add_new_book' ,  new_book_path(), class: "btn btn-primary" %>
+   <% if can? :update, Book %>
+      <%= link_to 'Add_new_book' ,  new_book_path(), class: "btn btn-primary" %>
+   <%end%>
 
 
 </tbody>
