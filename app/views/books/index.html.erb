@@ -44,12 +44,14 @@ h1 {text-align: center;}
           <%= form.hidden_field :book_id, value: book.id %>
           <%= form.hidden_field :book_title, value: book.book_title %>
           <%= form.hidden_field :publish_date, value: book.publish_date %>
-
-
-          <%= form.submit 'borrow'  %>
+          <%= form.hidden_field :status, value:'approved' %>
+         <% if book.borrow_histories&.last&.status == 'approved'  &&  book.borrow_histories&.last&.user_id ==  current_user.id%>
+            Borrowed
+         <%else%>
+             <%= form.submit 'borrow', :disable_with => "Processing..."  %>
+          <%end%>
         <% end %>
       </td>
-
    <%end%>
 
    <% if can? :update, Book %>

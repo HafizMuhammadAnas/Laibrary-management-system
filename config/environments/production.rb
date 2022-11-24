@@ -1,7 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -88,7 +88,8 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
-
+  config.action_mailer.default_url_options = {host:'https://damp-fortress-93806.herokuapp.com/'}
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
+

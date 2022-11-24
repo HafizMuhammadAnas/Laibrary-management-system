@@ -5,6 +5,7 @@ class BorrowHistoriesController < ApplicationController
 
   # GET /borrow_histories or /borrow_histories.json
   def index
+    # debugger
     user  = User.find_by(id: params[:format])
     if params[:format].present?
       @borrow_histories = user.borrow_histories
@@ -30,6 +31,9 @@ class BorrowHistoriesController < ApplicationController
 
     respond_to do |format|
       if @borrow_history.save
+
+        user_email = @borrow_history.user
+        WelcomeMailer.send_greetings_notification(user_email).deliver_now
         format.html { redirect_to borrow_histories_url, notice: 'Borrow history was successfully created.' }
         format.json { render :show, status: :created, location: @borrow_history }
       else
@@ -74,6 +78,6 @@ class BorrowHistoriesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def borrow_history_params
     params.fetch(:borrow_history).permit(:book_id, :user_id, :book_title, :publish_date, :starts_at_time_of_day,
-                                         :due_date, :fine ,:username)
+                                         :due_date, :fine ,:username, :status )
   end
 end

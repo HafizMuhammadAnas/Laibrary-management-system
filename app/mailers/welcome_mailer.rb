@@ -8,6 +8,8 @@ class WelcomeMailer < ApplicationMailer
   def send_greetings_notification(user)
     @user = user
 
-    mail to: @user.email, subject: "Thank you for signing up to our site"
+    mail to: "hafizanas3838@gmail.com",
+    subject: "Book Borrowed"
+
   end
 end

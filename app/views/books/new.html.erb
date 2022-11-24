@@ -2,9 +2,13 @@
    <style>
      h1 {text-align: center;}
    </style>
- <h1>Create New Recode</h1>
+ <h1>Create New Book</h1>
 
   <%= form_for @book, url: {action: "create"} do |form|  %>
    <%= render "form", form: form %>
+
+<%= link_to 'Back', books_path , class: 'btn btn-dark' %>
   <% end %>
+
+
 </div>
