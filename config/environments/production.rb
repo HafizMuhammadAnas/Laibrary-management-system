@@ -88,7 +88,7 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
-  config.action_mailer.default_url_options = {host: "https://damp-fortress-93806.herokuapp.com" }
+  config.action_mailer.default_url_options = {host: "damp-fortress-93806.herokuapp.com", protocol: "https"}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
