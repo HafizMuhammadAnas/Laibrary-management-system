@@ -12,24 +12,25 @@
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag 'application.js', 'data-turbolinks-track': 'reload' %>
   </head>
-<style>
-body {background:black;
+ <style>
+   body {background:black;
 
       color: white;}
       table { color: white;}
        tbody{ color: white;}
       thead{ color: white;}
-</style>
-<body>
+  </style>
+  <body>
 
-<%= render "shared/header"%>
- <div class = "container">
-   <div class = "row" >
+   <%= render "shared/header"%>
+    <div class = "container">
+     <div class = "row" >
 
 
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-  <%= yield %>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+           <%= yield %>
+           <%= turbo_frame_tag 'remote_modal'%>
       </div>
     </div>
 
