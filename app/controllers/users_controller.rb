@@ -9,10 +9,10 @@ class UsersController < ApplicationController
     @user = User.all
   end
 
-# def index
-#   @user = User.std_list  if params[:show] == 'student_list'
-#   @user = User.lib_list if params[:show] == 'librarian_list'
-# end
+    # def index
+    #   @user = User.std_list  if params[:show] == 'student_list'
+    #   @user = User.lib_list if params[:show] == 'librarian_list'
+    # end
 
   def show; end
 

@@ -11,7 +11,7 @@ class BooksController < ApplicationController
   def borrow_history; end
 
   def update
-    if @books.update(book_params)
+    if @book.update(book_params)
       redirect_to books_path, notice: 'Book has been updated successfuly'
     else
       render :edit, status: :unprocessable_entity
@@ -24,12 +24,12 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    if @book.save!
-      # format.turbo_stream { render turbo_stream: turbo_stream.append ('book_list', partial: 'books/book' , locals: { book: @book})}
-      redirect_to books_path, notice: 'Book has been created successfuly'
-    else
-      render :new, status: :unprocessable_entity
-    end
+      if @book.save!
+        redirect_to books_path, notice: 'Book has been created successfuly'
+      else
+        render :new, status: :unprocessable_entity
+      end
+
   end
 
   def show; end

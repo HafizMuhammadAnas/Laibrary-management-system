@@ -1,13 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
 import { Turbo } from "@hotwired/turbo-rails"
 
-// Connects to data-controller="book-modal"
+// Connects to data-controller="borrow-modal"
 export default class extends Controller {
   connect() {
-    console.log('i m stimulus!!')
+    console.log('i m borrowe!!')
   }
   initialize() {
-    this.element.setAttribute("data-action", "click->book-modal#showModal")
+    this.element.setAttribute("data-action", "click->borrow-modal#showModal")
   }
   showModal(event) {
     event.preventDefault()

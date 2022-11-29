@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  get 'borrowed_books/index'
   resources :borrow_histories
-
+  get 'borrow_histories/ind'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',

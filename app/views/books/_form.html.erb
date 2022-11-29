@@ -1,30 +1,28 @@
-<div class="modal-body">
-<%= form_for book, url: {action: "create"} do |form|  %>
-  <% if @book.errors.any? %>
-      <%  @book.errors.full_messages.each do |message| %>
-       <p>  <%= message %></p>
-      <%end %>
-    <%end %>
-     <div>
-     <%= form.label :book_title %><br>
-     <%= form.text_field :book_title%>
-     </div>
-     <div>
-     <%= form.label :description%><br>
-     <%= form.text_field :description%>
-     </div>
-     <div>
-     <%= form.label :publish_date %><br>
-     <%= form.date_field :publish_date%>
-     </div>
-     <div>
-     <%= form.label :profile_image%><br>
-     <%= form.file_field :profile_image%>
-     </div>
+<% if @book.errors.any? %>
+  <%  @book.errors.full_messages.each do |message| %>
+  <p>  <%= message %></p>
+<%end %>
+<%end %>
+<div>
+  <%= form.label :book_title %><br>
+  <%= form.text_field :book_title%>
 </div>
-<div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <%= form.hidden_field :user_id , value: current_user.id %>
-        <%= form.submit class: "btn btn-primary" , data: {action: "click->bs-modal#submitEnd" }%>
+<div>
+  <%= form.label :description%><br>
+  <%= form.text_field :description%>
 </div>
-<% end %>
+
+<div>
+  <%= form.label :content %><br>
+  <%= form.rich_text_area :content %>
+</div>
+<div>
+  <%= form.label :publish_date %><br>
+  <%= form.date_field :publish_date%>
+</div>
+<div>
+  <%= form.label :profile_image%><br>
+  <%= form.file_field :profile_image%>
+</div>
+  <%= form.hidden_field :user_id , value: current_user.id %>
+  <%= form.submit %>

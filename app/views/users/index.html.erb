@@ -1,62 +1,48 @@
 <div class= "text-white bg-dark mb-3" >
-
-<%#= link_to 'Add_new_User' ,  new_User_path, class: "btn btn-primary" %>
-<style>
- h1 {text-align: center;}
- table { color: white;}
-</style>
-<h1>List of all students</h1>
-<%= notice %>
-<%= alert %>
-
-<table class= "table table-bordered" >
-<thead>
-<tr>
-
-<th> First_name </th>
-<th> Last_name </th>
-<th> Username </th>
-<th> Email </th>
-<th> Role </th>
-<th> Education</th>
-<% if can? :read, User %>
-<th> View </th>
- <%end%>
-<%#if current_user.role == 'admin' || current_user.role == 'admin'%>
-<% if can? :destroy, User %>
-<th> Delete</th>
- <%end%>
- <%#end%>
-</tr>
-
-</thead>
-<tbody >
-<% @user.each do |user|%>
-  <tr>
-   <td> <%= user.first_name %> </td>
-   <td> <%= user.last_name %> </td>
-   <td> <%= user.username %> </td>
-   <td> <%= user.email %> </td>
-   <td> <%= user.role %> </td>
-   <td> <%= user.education %> </td>
-     <% if can? :read, User %>
-       <td><%= link_to "View", user_path(user) ,class: "btn btn-info bi bi-eye-fill"%></td>
-     <% end %>
-     <% if can? :destroy, User %>
-     <td> <%= link_to "Delete", user_path(user.id),class: "btn btn-danger bi bi-trash" , data: { 'turbo-confirm': 'Are you sure?', 'turbo-method': :delete } %></td>
-     <td><%= link_to "View_Borrow_Books",  borrow_histories_path(user) ,class: "btn btn-success bi bi-eye-fill"%></td>
-
-    <% end %>
-
-  </tr>
-<% end %>
+  <style>
+    h1 {text-align: center;}
+    table { color: white;}
+  </style>
+  <h1>List of all students</h1>
+  <%= notice %>
+  <%= alert %>
+  <table class= "table table-bordered" >
+    <thead>
+      <tr>
+        <th> First_name </th>
+        <th> Last_name </th>
+        <th> Username </th>
+        <th> Email </th>
+        <th> Role </th>
+        <th> Education</th>
+        <% if can? :read, User %>
+        <th> View </th>
+        <%end%>
+        <%#if current_user.role == 'admin' || current_user.role == 'admin'%>
+        <% if can? :destroy, User %>
+        <th> Delete</th>
+        <%end%>
+        <%#end%>
+      </tr>
+    </thead>
+    <tbody >
+      <% @user.each do |user|%>
+        <tr>
+          <td> <%= user.first_name %> </td>
+          <td> <%= user.last_name %> </td>
+          <td> <%= user.username %> </td>
+          <td> <%= user.email %> </td>
+          <td> <%= user.role %> </td>
+          <td> <%= user.education %> </td>
+          <% if can? :read, User %>
+            <td><%= link_to "View", user_path(user) ,class: "btn btn-info bi bi-eye-fill"%></td>
+          <% end %>
+          <% if can? :destroy, User %>
+            <td> <%= link_to "Delete", user_path(user.id),class: "btn btn-danger bi bi-trash" , data: { 'turbo-confirm': 'Are you sure?', 'turbo-method': :delete } %></td>
+            <td><%= link_to "Student_Borrowed_Books",  borrow_histories_path(user) ,class: "btn btn-primary", data: {controller: "borrow-modal" } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-
-
-
-
-</tbody>
-
-
-
-</table>

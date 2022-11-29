@@ -1,0 +1,58 @@
+<div class= "text-white bg-dark mb-3" >
+  <p style="color: green"><%= notice %></p>
+  <style>
+    h1 {text-align: center;}
+  </style>
+  <h1>Borrow History</h1>
+  <table class= "table table-bordered" >
+    <thead>
+      <tr>
+        <th> User_Id</th>
+        <th> Book_Id </th>
+        <th> Book_Title </th>
+        <th> Publish_Date</th>
+        <th> Issue_date </th>
+        <th> Due_Date </th>
+        <th> Fine</th>
+          <% if can? :read, BorrowHistory %>
+            <th> View</th>
+          <%end%>
+          <%if can? :destroy, BorrowHistory %>
+            <th> Request</th>
+            <th> Return</th>
+          <%end%>
+      </tr>
+    </thead>
+    <tbody >
+
+      <div id="borrow_histories">
+        <% @borrow_histories.each do |borrow_history| %>
+          <tr>
+            <td> <%= borrow_history.user_id %> </td>
+            <td> <%= borrow_history.book_id %> </td>
+            <td> <%= borrow_history.book_title %> </td>
+            <td> <%= borrow_history.publish_date.strftime('%m-%d-%y') %> </td>
+            <td> <%= borrow_history.starts_at_time_of_day.strftime('%m-%d-%y')%> </td>
+            <td> <%= borrow_history&.due_date&.strftime('%m-%d-%y')%> </td>
+            <td> <%= borrow_history.fine %> </td>
+            <% if can? :read, BorrowHistory %>
+              <td><%= link_to "View", borrow_history ,class: "bi bi-eye-fill btn btn-info"%></td>
+            <%end%>
+            <%if can? :destroy, BorrowHistory%>
+              <td> <%= borrow_history.status %> </td>
+              <td> <%= link_to "Return", borrow_history_path(borrow_history.id),class: "btn btn-danger bi bi-x-lg",data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' } %></td>
+            <%end %>
+          </tr>
+        <% end %>
+      </div>
+    </tbody>
+  </table>
+  <div class="modal-footer">
+    <%if current_user.role == 'manager' || current_user.role == 'admin'%>
+    <%= link_to 'Back To Student Table', users_path() , class: 'btn btn-primary' %>
+    <%else%>
+    <%= link_to 'Back To Books Table', books_path , class: 'btn btn-primary' %>
+    <%end%>
+  </div>
+</div>
+

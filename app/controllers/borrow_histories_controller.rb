@@ -14,6 +14,8 @@ class BorrowHistoriesController < ApplicationController
     end
   end
 
+
+
   # GET /borrow_histories/1 or /borrow_histories/1.json
   def show; end
 
@@ -27,6 +29,7 @@ class BorrowHistoriesController < ApplicationController
 
   # POST /borrow_histories or /borrow_histories.json
   def create
+    # debugger
     @borrow_history = BorrowHistory.new(borrow_history_params)
 
     respond_to do |format|
@@ -72,6 +75,7 @@ class BorrowHistoriesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_borrow_history
+
     @borrow_history = BorrowHistory.find(params[:id])
   end
 

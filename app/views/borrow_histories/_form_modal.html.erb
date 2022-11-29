@@ -1,0 +1,15 @@
+<%= turbo_frame_tag :remote_modal, target: :_top do %>
+  <div class="modal fade" id="exModal" tabindex="-1" aria-labelledby="exModalLabel" aria-hidden="true" data-controller="bs-modal" >
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class= "text-dark >
+           <h1 class= "modal-title fs-5" id="exModalLabel">Borrowed Books</h1>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <%= render "borrow_histories/index"%>
+      </div>
+    </div>
+  </div>
+<%end%>

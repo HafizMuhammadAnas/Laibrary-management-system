@@ -1,0 +1,10 @@
+<div class= "text-white bg-primary mb-3" >
+   <style>
+     h1 {text-align: center;}
+   </style>
+ <h1>Create New Recode</h1>
+
+  <%= form_for @book, url: {action: "create"} do |form|  %>
+   <%= render "form", form: form %>
+  <% end %>
+</div>
