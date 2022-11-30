@@ -36,7 +36,7 @@ class BorrowHistoriesController < ApplicationController
       if @borrow_history.save
 
         user_email = @borrow_history.user
-         WelcomeMailer.send_greetings_notification(user_email).deliver_now
+        WelcomeMailer.send_greetings_notification(user_email).deliver_now
         format.html { redirect_to books_path, notice: 'Borrow history was successfully created.' }
         format.json { render :show, status: :created, location: @borrow_history }
       else

@@ -20,7 +20,7 @@ class User < ApplicationRecord
          authentication_keys: [:login]
   validates :username, presence: true, uniqueness: true
 
-
+  validates :email , presence: true
   #  enum role: %i[admin manager student]
   attr_accessor :login
 
