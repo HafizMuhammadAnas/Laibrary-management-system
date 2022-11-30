@@ -1,8 +1,6 @@
 
 <div class= "text-white bg-dark mb-3" >
   <div class="modal-body">
-     <p style="color: green"><%= notice %></p>
-
      <style>
      h1 {text-align: center;}
      </style>
@@ -18,10 +16,6 @@
           <th> Issue_date </th>
           <th> Due_Date </th>
           <th> Fine</th>
-
-            <% if can? :read, BorrowHistory %>
-              <th> View</th>
-            <%end%>
             <%if can? :destroy, BorrowHistory %>
               <th> Request</th>
               <th> Return</th>
@@ -39,9 +33,6 @@
             <td> <%= borrow_history.starts_at_time_of_day.strftime('%m-%d-%y')%> </td>
             <td> <%= borrow_history&.due_date&.strftime('%m-%d-%y')%> </td>
             <td> <%= borrow_history.fine %> </td>
-              <% if can? :read, BorrowHistory %>
-                  <td><%= link_to "View", borrow_history ,class: "bi bi-eye-fill btn btn-info"%></td>
-              <%end%>
               <%if can? :destroy, BorrowHistory%>
                 <td> <%= borrow_history.status %> </td>
                 <td> <%= link_to "Return", borrow_history_path(borrow_history.id),class: "btn btn-danger bi bi-x-lg",data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' } %></td>

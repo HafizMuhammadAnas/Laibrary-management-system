@@ -15,9 +15,6 @@
         <th> Email </th>
         <th> Role </th>
         <th> Education</th>
-        <% if can? :read, User %>
-        <th> View </th>
-        <%end%>
         <%#if current_user.role == 'admin' || current_user.role == 'admin'%>
         <% if can? :destroy, User %>
         <th> Delete</th>
@@ -35,9 +32,6 @@
           <td> <%= user.email %> </td>
           <td> <%= user.role %> </td>
           <td> <%= user.education %> </td>
-          <% if can? :read, User %>
-            <td><%= link_to "View", user_path(user) ,class: "btn btn-info bi bi-eye-fill"%></td>
-          <% end %>
           <% if can? :destroy, User %>
             <td> <%= link_to "Delete", user_path(user.id),class: "btn btn-danger bi bi-trash" , data: { 'turbo-confirm': 'Are you sure?', 'turbo-method': :delete } %></td>
             <td><%= link_to "Student_Borrowed_Books",  borrow_histories_path(user) ,class: "btn btn-primary", data: {controller: "borrow-modal" } %></td>

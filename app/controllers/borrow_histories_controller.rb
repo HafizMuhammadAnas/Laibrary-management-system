@@ -36,8 +36,8 @@ class BorrowHistoriesController < ApplicationController
       if @borrow_history.save
 
         user_email = @borrow_history.user
-        WelcomeMailer.send_greetings_notification(user_email).deliver_now
-        format.html { redirect_to borrow_histories_url, notice: 'Borrow history was successfully created.' }
+        # WelcomeMailer.send_greetings_notification(user_email).deliver_now
+        format.html { redirect_to books_path, notice: 'Borrow history was successfully created.' }
         format.json { render :show, status: :created, location: @borrow_history }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -63,10 +63,11 @@ class BorrowHistoriesController < ApplicationController
 
   # DELETE /borrow_histories/1 or /borrow_histories/1.json
   def destroy
+    # debugger
     @borrow_history.destroy
 
     respond_to do |format|
-      format.html { redirect_to borrow_histories_url, notice: 'Borrow history was successfully destroyed.' }
+      format.html { redirect_to borrowed_books_index_path, notice: 'Borrow history was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
