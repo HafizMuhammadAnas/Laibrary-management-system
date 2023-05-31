@@ -80,3 +80,5 @@ gem 'cancancan'
 # gem 'jsbundling-rails'
 gem 'pry-rails'
 gem 'rails-erd', group: :development
+gem 'sidekiq'
+gem 'radis'
